@@ -1,0 +1,123 @@
+<%- include('../../includes/header')-%>
+        <div class="wrapper">
+          <%- include('../../includes/topbar')-%>
+            <div class="page-wrap">
+              <%- include('../../includes/sidebar')-%>
+              <div class="main-content">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title"><h2>প্রদর্শনী স্থাপনের চূড়ান্ত প্রতিবেদন ফর্ম</h2></div>
+                                <p><%
+                                if(success !=''){ %>
+                                <%= success %>
+                                    <% } %>
+                                </p>
+                                </div>  
+                            <div class="panel-body" >
+                                <form action="/upazilla/finalTrialFormPost/<%= records.id %>" id="FieldTrialForm" class="form-horizontal" method="post"  role="form">
+                                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                                        <p>Error:</p>
+                                        <span></span>
+                                    </div>
+
+                                        
+                                    <div class="form-group">
+                                        <label for="name" class="col-md-3 control-label">কৃষকের নাম ও পিতা/স্বামীর নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="name" placeholder="কৃষকের নাম ও পিতা/স্বামীর নাম" value="<%=records.name%>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="vname" class="col-md-3 control-label">গ্রাম/ব্লক</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="vname" placeholder="গ্রাম/ব্লক" value="<%=records.vname%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mnum" class="col-md-3 control-label">কৃষকের মোবাইল নম্বর</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="mnum" placeholder="কৃষকের মোবাইল নম্বর" value="<%=records.mnum%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="breedname" class="col-md-3 control-label">ব্যবহৃত জাতের নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="breedname" placeholder="ব্যবহৃত জাতের নাম" value="<%=records.breedname%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="trialdate" class="col-md-3 control-label">রোপণ/স্থাপনের তারিখ</label>
+                                        <div class="col-md-9">
+                                            <input type="date" class="form-control" name="trialdate" placeholder="রোপণ/স্থাপনের তারিখ" >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="cdate" class="col-md-3 control-label">কর্তন ফসল সংগ্রহের তারিখ</label>
+                                        <div class="col-md-9">
+                                            <input type="date" class="form-control" name="cdate" placeholder="কর্তন ফসল সংগ্রহের তারিখ ">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="production" class="col-md-3 control-label">উতপাদন(টন/হেঃ)</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="production" placeholder="উতপাদন(টন/হেঃ)" >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="fcomment" class="col-md-3 control-label">কৃষকের মন্তব্য </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="fcomment" placeholder="কৃষকের মন্তব্য ">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="kcomment" class="col-md-3 control-label">কর্মকর্তাদের মন্তব্য </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="kcomment" placeholder="কর্মকর্তাদের মন্তব্য ">
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div class="form-group">
+                                        <label for="year" class="col-md-3 control-label">বছর</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="year" placeholder="year" value="<%=records.year%>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="year" class="col-md-3 control-label">userid</label>
+                                        <div class="col-md-9">
+                                            <input type="number" class="form-control" name="id" placeholder="id" value="<%=records.upazilla_id%>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <!-- Button -->                                        
+                                        <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" name="submit" value="submit" class="btn btn-primary">   
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                        
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('../../includes/footer')-%>

@@ -1,0 +1,66 @@
+<%if (records.length >0){ %>
+    <table class="table table-bordered table-striped" id="tblCustomers" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+        <th>কৃষকের নাম</th>
+        <th>পিতার নাম</th>
+        <th>গ্রামের/মাঠের নাম</th>
+        <th>কৃষকের এনআইডি নং </th>
+        <th>কৃষকের মোবাইল নং</th>
+        <th>প্রদর্শনীর ধরণ(একক/ব্লক/সবজি/ফল/মিশ্রফল/বিশেষ)</th>
+        <th>প্রদর্শনী ফসলের/প্রযুক্তির নাম</th>
+        <th>প্রশিক্ষণের তারিখ</th>
+        <th>ব্লকের নাম</th>
+        <th>এসএএওর নাম</th>
+        <th>এসএএওর ফোন নাম্বার</th>
+        <th>পরিবর্তন/মুছুন</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% records.forEach(function(row){ %>
+            <tr>
+                <td><%= row.name %></td>
+                <td><%= row.fname %></td>
+                <td><%= row.vname %></td>
+                <td><%= row.nid %></td>
+                <td><%= row.mnum %></td>
+                <td><%= row.ptype %></td>
+                <td><%= row.pname %></td>
+                <td><%= row.date %></td>
+                <td><%= row.block %></td>
+                <td><%= row.saooname %></td>
+                <td><%= row.pnum %></td>
+                <td><a class="btn btn-primary btn-xs" href="/upazilla/trainedFarmerEdit/<%= row.id %>"><i class="fa fa-edit"></i></a>
+                    <a class="btn btn-danger btn-xs" href="/upazilla/trainedFarmerDelete/<%= row.id %>"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<% }else{ %>
+    <table class="table table-bordered table-striped" id="tblCustomers" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+            <th>কৃষকের নাম</th>
+            <th>পিতার নাম</th>
+            <th>গ্রামের/মাঠের নাম</th>
+            <th>কৃষকের এনআইডি নং </th>
+            <th>কৃষকের মোবাইল নং</th>
+            <th>প্রদর্শনীর ধরণ(একক/ব্লক/সবজি/ফল/মিশ্রফল/বিশেষ)</th>
+            <th>প্রদর্শনী ফসলের/প্রযুক্তির নাম</th>
+            <th>প্রশিক্ষণের তারিখ</th>
+            <th>ব্লকের নাম</th>
+            <th>এসএএওর নাম</th>
+            <th>এসএএওর ফোন নাম্বার</th>
+            <th>পরিবর্তন/মুছুন</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% records.forEach(function(row){ %>
+            <tr>
+                <td colspan="10">No data Found</td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+<% } %>

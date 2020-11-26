@@ -1,0 +1,191 @@
+<div class="app-sidebar colored">
+    <div class="sidebar-header">
+        <a class="header-brand" href="../index.ejs">
+           
+            <span class="text"><%= locals.type %> Admin </span>
+        </a>
+       
+      </div>
+    
+
+
+      <% if(locals.type === "pd"){%>
+        <div class="sidebar-content">
+            <div class="nav-container">
+                <nav id="main-menu-navigation" class="navigation-main">
+                    <div class="nav-lavel">Navigation</div>
+                <div class="nav-item active">
+                    <a href="/pd/dashboard"><i class="ik ik-bar-chart-2"></i><span>ড্যাশবোর্ড</span></a>
+                </div>
+               
+                <div class="nav-lavel">প্রশিক্ষণ</div>
+                <div class="nav-item">
+                    <a href="/pd/trainedFarmer"><i class="ik ik-package"></i><span>কৃষক প্রশিক্ষণ তথ্য </span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/pd/initialTrial"><i class="ik ik-package"></i><span>প্রদর্শনীর প্রাথমিক প্রতিবেদন</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/pd/finalTrial"><i class="ik ik-package"></i><span>প্রদর্শনীর চূড়ান্ত প্রতিবেদন</span></a>
+                </div>
+
+
+                <div class="nav-lavel">অন্যান্য কার্যক্রম</div>
+                <div class="nav-item">
+                    <a href="/pd/fieldDay"><i class="ik ik-package"></i><span>মাঠ দিবস</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/pd/machinery"><i class="ik ik-package"></i><span>কৃষি যন্ত্রপাতি বিতরণ</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/pd/irrigation"><i class="ik ik-package"></i><span>সেচ অবকাঠামো নির্মাণ </span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/pd/agriFair"><i class="ik ik-package"></i><span>কৃষি মেলা</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/pd/motivation"><i class="ik ik-package"></i><span>উদ্বুদ্ধকরণ ভ্রমণ</span></a>
+                </div>
+
+                    
+    
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+    <% }else if (locals.type === "ad"){%>
+        <div class="sidebar-content">
+            <div class="nav-container">
+                <nav id="main-menu-navigation" class="navigation-main">
+                    <div class="nav-lavel">Navigation</div>
+                <div class="nav-item active">
+                    <a href="/ad/dashboard"><i class="ik ik-bar-chart-2"></i><span>ড্যাশবোর্ড</span></a>
+                </div>
+               
+                <div class="nav-lavel">প্রশিক্ষণ</div>
+                <div class="nav-item">
+                    <a href="/ad/trainedFarmer"><i class="ik ik-package"></i><span>প্রশিক্ষণপ্রাপ্ত কৃষকের তথ্য</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/ad/initialTrial"><i class="ik ik-package"></i><span>প্রদর্শনীর প্রাথমিক প্রতিবেদন</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/ad/trialProgress"><i class="ik ik-package"></i><span>প্রদর্শনীর অগ্রগতির প্রতিবেদন</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/ad/finalTrial"><i class="ik ik-package"></i><span>প্রদর্শনীর চূড়ান্ত প্রতিবেদন</span></a>
+                </div>
+
+
+                <div class="nav-lavel">প্রকল্প এলাকার অগ্রগতি</div>
+                <div class="nav-item">
+                    <a href="/ad/cropExpansion"><i class="ik ik-package"></i><span>ফসল আবাদ অগ্রগতি</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/ad/breedExpansion"><i class="ik ik-package"></i><span>ফসলের জাত সম্প্রসারণ</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/ad/technologyExpansion"><i class="ik ik-package"></i><span>প্রযুক্তি সম্প্রসারণ</span></a>
+                </div>
+                
+                <div class="nav-lavel">সার্বিক অগ্রগতি</div>
+                <div class="nav-item">
+                    <a href="/ad/abadiJomi"><i class="ik ik-package"></i><span>আবাদী জমি ও ফসল উৎপাদন</span></a>
+                </div>
+
+                    
+    
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+    <% }else if (locals.type === "dd"){%>
+        <div class="sidebar-content">
+            <div class="nav-container">
+                <nav id="main-menu-navigation" class="navigation-main">
+                    <div class="nav-lavel">Navigation</div>
+                <div class="nav-item active">
+                    <a href="/dd/dashboard"><i class="ik ik-bar-chart-2"></i><span>ড্যাশবোর্ড</span></a>
+                </div>
+               
+                <div class="nav-lavel">প্রশিক্ষণ</div>
+                <div class="nav-item">
+                    <a href="/dd/trainedFarmer"><i class="ik ik-package"></i><span>কৃষক প্রশিক্ষণ তথ্য </span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/dd/initialTrial"><i class="ik ik-package"></i><span>প্রদর্শনীর প্রাথমিক প্রতিবেদন</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/dd/finalTrial"><i class="ik ik-package"></i><span>প্রদর্শনীর চূড়ান্ত প্রতিবেদন</span></a>
+                </div>
+
+
+                <div class="nav-lavel">অন্যান্য কার্যক্রম</div>
+                <div class="nav-item">
+                    <a href="/dd/fieldDay"><i class="ik ik-package"></i><span>মাঠ দিবস</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/dd/machinery"><i class="ik ik-package"></i><span>কৃষি যন্ত্রপাতি বিতরণ</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/dd/irrigation"><i class="ik ik-package"></i><span>সেচ অবকাঠামো নির্মাণ </span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/dd/agriFair"><i class="ik ik-package"></i><span>কৃষি মেলা</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/dd/motivation"><i class="ik ik-package"></i><span>উদ্বুদ্ধকরণ ভ্রমণ</span></a>
+                </div>
+
+                    
+    
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+<% }else { %>
+    <div class="sidebar-content">
+        <div class="nav-container">
+            <nav id="main-menu-navigation" class="navigation-main">
+                <div class="nav-lavel">Navigation</div>
+                <div class="nav-item active">
+                    <a href="/upazilla/dashboard"><i class="ik ik-bar-chart-2"></i><span>ড্যাশবোর্ড</span></a>
+                </div>
+               
+                <div class="nav-lavel">প্রশিক্ষণ</div>
+                <div class="nav-item">
+                    <a href="/upazilla/trainedFarmer"><i class="ik ik-package"></i><span>কৃষক প্রশিক্ষণ তথ্য </span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/upazilla/initialTrial"><i class="ik ik-package"></i><span>প্রদর্শনীর প্রাথমিক প্রতিবেদন</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/upazilla/finalTrial"><i class="ik ik-package"></i><span>প্রদর্শনীর চূড়ান্ত প্রতিবেদন</span></a>
+                </div>
+
+
+                <div class="nav-lavel">অন্যান্য কার্যক্রম</div>
+                <div class="nav-item">
+                    <a href="/upazilla/fieldDay"><i class="ik ik-package"></i><span>মাঠ দিবস</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/upazilla/machinery"><i class="ik ik-package"></i><span>কৃষি যন্ত্রপাতি বিতরণ</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/upazilla/irrigation"><i class="ik ik-package"></i><span>সেচ অবকাঠামো নির্মাণ </span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/upazilla/agriFair"><i class="ik ik-package"></i><span>কৃষি মেলা</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="/upazilla/motivation"><i class="ik ik-package"></i><span>উদ্বুদ্ধকরণ ভ্রমণ</span></a>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+</div>
+<% }   %>

@@ -1,0 +1,172 @@
+<%- include('../../includes/header')-%>
+        <div class="wrapper">
+          <%- include('../../includes/topbar')-%>
+            <div class="page-wrap">
+              <%- include('../../includes/sidebar')-%>
+              <div class="main-content">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title"><h2>প্রদর্শনীর প্রাথমিক প্রতিবেদন ফর্ম</h2></div>
+                                <p><%
+                                if(success !=''){ %>
+                                <%= success %>
+                                    <% } %>
+                                </p>
+                                </div>  
+                            <div class="panel-body" >
+                                <form action="/upazilla/initialTrialFormPost" id="FieldTrialForm" class="form-horizontal" method="post"  role="form">
+                                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                                        <p>Error:</p>
+                                        <span></span>
+                                    </div>
+
+                                        
+                                    <div class="form-group">
+                                        <label for="name" class="col-md-3 control-label">কৃষকের নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="name" placeholder="কৃষকের নাম">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="fname" class="col-md-3 control-label">পিতার নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="fname" placeholder="পিতার নাম">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="vname" class="col-md-3 control-label">গ্রামের/মাঠের নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="vname" placeholder="গ্রামের/মাঠের নাম">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="nid" class="col-md-3 control-label">কৃষকের এনআইডি নং</label>
+                                        <div class="col-md-9">
+                                        <input type="text" class="form-control" name="nid" placeholder="কৃষকের এনআইডি নং">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mnum" class="col-md-3 control-label">কৃষকের মোবাইল নং</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="mnum" placeholder="কৃষকের মোবাইল নং">
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    <div class="form-group">
+                                        <label for="cdistribution" class="col-md-3 control-label">প্রকল্প শুরুর পূর্বের শস্যবিন্যাস (রবি-খ,১- খ২)</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="cdistribution" placeholder="প্রকল্প শুরুর পূর্বের শস্যবিন্যাস (রবি-খ,১- খ২)">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="pdistribution" class="col-md-3 control-label">প্রস্তাবিত শস্যবিন্যাস (রবি-খ,১- খ২)</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="pdistribution" placeholder="প্রস্তাবিত শস্যবিন্যাস (রবি-খ,১- খ২)">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="ptype" class="col-md-3 control-label">প্রদর্শনীর ধরণ(একক/ব্লক/সবজি/ফল/মিশ্রফল/বিশেষ)</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="ptype" placeholder="প্রদর্শনীর ধরণ(একক/ব্লক/সবজি/ফল/মিশ্রফল/বিশেষ)">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="tname" class="col-md-3 control-label">প্রদর্শনী ফসলের/প্রযুক্তির নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="pname" placeholder="প্রদর্শনী ফসলের/প্রযুক্তির নাম">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="breedname" class="col-md-3 control-label">জাতের নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="breedname" placeholder="জাতের নাম">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="source" class="col-md-3 control-label">বীজ/চারার উতস(গবেষণার প্রতিষ্ঠানের নাম/বিএসডিসি/কোম্পানীর নাম)</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="source" placeholder="বীজ/চারার উতস(গবেষণার প্রতিষ্ঠানের নাম/বিএসডিসি/কোম্পানীর নাম)">
+                                        </div>
+                                    </div>
+                                       
+                                    <div class="form-group">
+                                        <label for="trialsize" class="col-md-3 control-label">প্রদর্শনীর আকার(শতক)</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="trialsize" placeholder="প্রদর্শনীর আকার(শতক)">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="trialdate" class="col-md-3 control-label">প্রদর্শনীর বপন/রোপণ/স্থাপনের তারিখ</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="trialdate" placeholder="প্রদর্শনীর বপন/রোপণ/স্থাপনের তারিখ">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="blockname" class="col-md-3 control-label">ব্লকের নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="block" placeholder="ব্লকের নাম">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="saooname" class="col-md-3 control-label">এসএএওর নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="saooname" placeholder="এসএএওর নাম">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="pnum" class="col-md-3 control-label">এসএএওর ফোন নাম্বার</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="pnum" placeholder="এসএএওর ফোন নাম্বার">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="year" class="col-md-3 control-label">বছর</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="year" placeholder="year">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="year" class="col-md-3 control-label">userid</label>
+                                        <div class="col-md-9">
+                                            <input type="number" class="form-control" name="user_id" placeholder="id" value="<%= user_id %>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <!-- Button -->                                        
+                                        <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" name="submit" value="submit" class="btn btn-primary">   
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                        
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('../../includes/footer')-%>

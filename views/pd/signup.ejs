@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="signin_signup/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="/signin_signup/animate/animate.css">
+    <!--===============================================================================================-->	
+      <link rel="stylesheet" type="text/css" href="/signin_signup/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="/signin_signup/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="/signin_signup/select2/select2.min.css">
+    <!--===============================================================================================-->	
+      <link rel="stylesheet" type="text/css" href="/signin_signup/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+      <link rel="stylesheet" type="text/css" href="/signin_signup/main_css/util.css">
+      <link rel="stylesheet" type="text/css" href="/signin_signup/main_css/main.css">
+   
+  </head>
+  <body>
+      <div class="limiter">
+        <div class="container-login100">
+          <div class="wrap-login100">
+            <form action="/pd/signups" id="EmployeeForm" class="login100-form validate-form" method="post" role="form">
+              <% if( msg !=''){ %>
+                <div id="signupalert" class="alert alert-danger" >
+                  <p><%= msg %> </p>
+                </div>
+                <% } %>
+              <span class="login100-form-title p-b-43">
+                <%= title %>
+                <br>
+                Upazilla SignUp
+              </span>
+              
+              
+              <div class="wrap-input100 validate-input" data-validate="User Name is required" >
+                <input class="input100" type="uname"  name="uname" >
+                <span class="focus-input100"></span>
+                <span class="label-input100">Upazilla Name</span>
+              </div>
+              
+              <div class="wrap-input100 validate-input" data-validate="Password is required">
+                <input class="input100" type="password" name="password" >
+                <span class="focus-input100"></span>
+                <span class="label-input100">Password</span>
+              </div>
+
+              <div class="wrap-input100 validate-input" data-validate="Password is required">
+                <input class="input100" type="password" name="confirmPassword" >
+                <span class="focus-input100"></span>
+                <span class="label-input100">Confirm Password</span>
+              </div>
+    
+            
+          
+    
+              <div class="container-login100-form-btn">
+                <button class="login100-form-btn">
+                  Sign up
+                </button>
+              </div>
+
+              <p class="text-center">If you have already created account, please do signin!</p>
+              <div class="container-login100-form-btn">
+                <a href="/pd/login" class="login100-form-btn">Sign In</a>
+               </button>
+             </div>
+              
+            </form>
+            
+            <div class="login100-more" style="background-image: url('/images/bg.jpg');">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!--===============================================================================================-->
+	<script src="/signin_signup/jquery/jquery-3.2.1.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="/signin_signup/animsition/js/animsition.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="/signin_signup/bootstrap/js/popper.js"></script>
+    <script src="/signin_signup/bootstrap/js/bootstrap.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="/signin_signup/select2/select2.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="/signin_signup/daterangepicker/moment.min.js"></script>
+    <script src="/signin_signup/daterangepicker/daterangepicker.js"></script>
+  <!--===============================================================================================-->
+    <script src="/signin_signup/countdowntime/countdowntime.js"></script>
+  <!--===============================================================================================-->
+    <script src="/signin_signup/main_js/main.js"></script>
+  
+  </body>
+</html>

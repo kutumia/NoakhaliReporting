@@ -1,0 +1,190 @@
+<%- include('../../includes/header')-%>
+        <div id="wrapper" class="wrapper" >
+            <%- include('../../includes/topbar')-%>
+            <div class="page-wrap">
+                <%- include('../../includes/sidebar')-%>
+                <div class="main-content">
+                    <div class="container-fluid">
+                        <div class="row clearfix">
+                            <div class="col-md-10">
+                                <h1 class="text-center"><%= title %></h1>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row clearfix">
+                                    <%if (district.length >0){ %>
+                                        <div class="col-md-3">
+                                            <label for="district">Choose a District:</label>
+                                                <select id="district" name="district">
+                                                    <% district.forEach(function(row){ %>
+                                                        <option value="<%= row.id %>"><%= row.uname %></option>
+                                                    <% }) %>
+                                                </select>
+                                        </div>
+                                    <% } %>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <select name="upazilla" id="upazilla" class="form-control">
+                                                    <option value="0" disabled="true" selected="true">Select upazilla</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                    <div class="col-md-3">
+                                        <label for="year">Choose a year:</label>
+                                        <select id="year" name="year">
+                                            <option value="">Choose year</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020" selected>2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <!-- Button -->                                        
+                                        <div>
+                                        <input type="submit" id="submit" name="submit" value="submit" class="btn btn-primary">   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="table-responsive" id="output"></div>
+
+                        <input type="button" id="btnExport" value="Download PDF" />
+
+                        <div id="output"></div>
+        <!--                    <div id="loading" class="loading"><img src="{{ asset('assets/img/icon/loading.gif') }}" alt=""></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+   
+<%- include('../../includes/footer')-%>
+<script>
+        
+    $(document).ready(function(){
+        
+      $('.dropdown a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });
+</script>
+
+<script type="text/javascript">
+   
+    $("body").on("click", "#btnExport", function () {
+        html2canvas($('#tblCustomers')[0], {
+            onrendered: function (canvas) {
+                var data = canvas.toDataURL();
+                var docDefinition = {
+                    content: [{
+                        image: data,
+                        width: 650
+                    }]
+                };
+                pdfMake.createPdf(docDefinition).download("farmer-details.pdf");
+            }
+        });
+    });
+
+    $('#district').on("change",function () {
+        var district = $('#district').val();
+        $.ajax({
+            type: "POST",
+            url: "/ad/initialTrialDistrictFilter",
+            data: {district: district},
+            datatype: "json",
+            beforeSend: function() {
+                // setting a timeout
+                $('#loading').show();
+                $('#output').hide();
+            },
+            success: function (data) {
+                $('#output').html(data);
+                $('#tblCustomers').DataTable();
+                $('#upazilla').empty();
+                if(data){
+                    $.each(data, function(key, value){
+                    $('#upazilla').append('<option value="'+value.id+'">' + value.uname + '</option>');
+
+                });
+                }else {
+                    $('#upazilla').empty();
+                }
+
+            },
+            complete: function() {
+                $('#loading').hide();
+                $('#output').show();
+            }
+        });
+    });
+
+    $("#wrapper").load( "no url rn",function() {
+        
+        var year = new Date().getFullYear();
+        var upazilla = $('#upazilla').val();
+        $.ajax({
+            type: "POST",
+            url: "/ad/initialTrialFilter",
+            data: {year: year,upazilla:upazilla},
+            datatype: "json",
+            beforeSend: function() {
+                // setting a timeout
+                $('#loading').show();
+                $('#output').hide();
+
+            },
+            success: function (data) {
+                $('#output').html(data);
+                $('#tblCustomers').DataTable();
+            },
+            complete: function() {
+                $('#loading').hide();
+                $('#output').show();
+            }
+        });
+    });
+
+    $('#submit').on("click",function () {
+        var year = $('#year').val();
+        var upazilla = $('#upazilla').val();
+        $.ajax({
+            type: "POST",
+            url: "/ad/initialTrialFilter",
+            data: {year: year,upazilla:upazilla},
+            datatype: "json",
+            beforeSend: function() {
+                // setting a timeout
+                $('#loading').show();
+                $('#output').hide();
+            },
+            success: function (data) {
+                $('#output').html(data);
+                $('#tblCustomers').DataTable();
+            },
+            complete: function() {
+                $('#loading').hide();
+                $('#output').show();
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $('#tblCustomers').DataTable();
+    } );
+
+    
+
+</script>

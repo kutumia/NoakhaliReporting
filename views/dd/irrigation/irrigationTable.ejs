@@ -1,0 +1,54 @@
+<%if (records.length >0){ %>
+    <table class="table table-bordered table-striped" id="tblCustomers" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+        <th>ক্রমিক নং</th>
+        <th>জেলার নাম</th>
+        <th>উপজেলার নাম</th>
+        <th>বারিড পাইপের সংখ্যা ও দৈর্ঘ্য</th>
+        <th>বারিড পাইপের অবস্থান( ইউনিয়ন ও গ্রামের অবস্থান)</th>
+        <th>সেচের আওতায় জমির পরিমাণ</th>
+        <th>মন্তব্য</th>
+        <th>পরিবর্তন/মুছুন</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% records.forEach(function(row,index){ %>
+            <tr>
+                <td><%= index+1 %></td>
+                <td><%= row.district %></td>
+                <td><%= row.upazilla %></td>
+                <td><%= row.pipe %></td>
+                <td><%= row.union %></td>
+                <td><%= row.jomi%></td>
+                <td><%= row.comment %></td>
+                <td><a class="btn btn-primary btn-xs" href="/upazilla/irrigationEdit/<%= row.id %>"><i class="fa fa-edit"></i></a>
+                    <a class="btn btn-danger btn-xs" href="/upazilla/irrigationDelete/<%= row.id %>"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<% }else{ %>
+    <table class="table table-bordered table-striped" id="tblCustomers" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+            <th>ক্রমিক নং</th>
+        <th>জেলার নাম</th>
+        <th>উপজেলার নাম</th>
+        <th>বারিড পাইপের সংখ্যা ও দৈর্ঘ্য</th>
+        <th>বারিড পাইপের অবস্থান( ইউনিয়ন ও গ্রামের অবস্থান)</th>
+        <th>সেচের আওতায় জমির পরিমাণ</th>
+        <th>মন্তব্য</th>
+        <th>পরিবর্তন/মুছুন</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% records.forEach(function(row){ %>
+            <tr>
+                <td colspan="10">No data Found</td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+<% } %>

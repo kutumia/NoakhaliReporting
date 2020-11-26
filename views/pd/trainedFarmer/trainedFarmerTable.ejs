@@ -1,0 +1,54 @@
+<%if (records.length >0){ %>
+    <table class="table table-bordered table-striped" id="tblCustomers" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+        <th>ক্রমিক নং</th>
+        <th>প্রশিক্ষণার্থীর নাম ও পিতা/স্বামীর নাম</th>
+        <th>গ্রাম/ব্লক</th>
+        <th>মোবাইল নম্বর (যদি থাকে)</th>
+        <th>জাতীয় পরিচয়পত্র নম্বর</th>
+        <th>প্রশিক্ষণের বিষয়</th>
+        <th>প্রশিক্ষণের তারিখ</th>
+        <th>পরিবর্তন/মুছুন</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% records.forEach(function(row,index) { %>
+            <tr>
+                <td><%= index+1 %></td>
+                <td><%= row.name %></td>
+                <td><%= row.vname %></td>
+                <td><%= row.mnum %></td>
+                <td><%= row.nid %></td>
+                <td><%= row.topic%></td>
+                <td><%= row.date %></td>
+                <td><a class="btn btn-primary btn-xs" href="/upazilla/trainedFarmerEdit/<%= row.id %>"><i class="fa fa-edit"></i></a>
+                    <a class="btn btn-danger btn-xs" href="/upazilla/trainedFarmerDelete/<%= row.id %>"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<% }else{ %>
+    <table class="table table-bordered table-striped" id="tblCustomers" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+            <th>ক্রমিক নং</th>
+            <th>প্রশিক্ষণার্থীর নাম ও পিতা/স্বামীর নাম</th>
+            <th>গ্রাম/ব্লক</th>
+            <th>মোবাইল নম্বর (যদি থাকে)</th>
+            <th>জাতীয় পরিচয়পত্র নম্বর</th>
+            <th>প্রশিক্ষণের বিষয়</th>
+            <th>প্রশিক্ষণের তারিখ</th>
+            <th>পরিবর্তন/মুছুন</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% records.forEach(function(row){ %>
+            <tr>
+                <td colspan="10">No data Found</td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+<% } %>
