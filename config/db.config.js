@@ -15,7 +15,7 @@
 var dotenv = require('dotenv');
 dotenv.config()
 const { DBHOST, DBUSER, DBPASSWORD, DB } = process.env
-console.log(DBHOST, DBHOST, DBUSER, DBPASSWORD, DB)
+//console.log(DBHOST, DBHOST, DBUSER, DBPASSWORD, DB)
 module.exports = {
   HOST: DBHOST,
   PORT: 3306,
