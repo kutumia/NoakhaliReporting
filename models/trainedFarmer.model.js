@@ -23,6 +23,18 @@ module.exports = (sequelize, Sequelize) => {
       date: {
         type: Sequelize.STRING
       },
+      card: {
+        type: Sequelize.STRING
+      },
+      ddComment: {
+        type: Sequelize.STRING
+      },
+      pdComment: {
+        type: Sequelize.STRING
+      },
+      batch: {
+        type: Sequelize.STRING
+      },
       year: {
         type: Sequelize.STRING
       },

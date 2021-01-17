@@ -23,35 +23,6 @@
                                         <span></span>
                                     </div>
 
-                                        
-                                    <div class="form-group">
-                                        <label for="name" class="col-md-3 control-label">কৃষকের নাম ও পিতা/স্বামীর নাম</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="name" placeholder="কৃষকের নাম ও পিতা/স্বামীর নাম" value="<%=records.name%>">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="vname" class="col-md-3 control-label">গ্রাম/ব্লক</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="vname" placeholder="গ্রাম/ব্লক" value="<%=records.vname%>">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="mnum" class="col-md-3 control-label">কৃষকের মোবাইল নম্বর</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="mnum" placeholder="কৃষকের মোবাইল নম্বর" value="<%=records.mnum%>">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="breedname" class="col-md-3 control-label">ব্যবহৃত জাতের নাম</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="breedname" placeholder="ব্যবহৃত জাতের নাম" value="<%=records.breedname%>">
-                                        </div>
-                                    </div>
-
                                     <div class="form-group">
                                         <label for="trialdate" class="col-md-3 control-label">রোপণ/স্থাপনের তারিখ</label>
                                         <div class="col-md-9">
@@ -67,16 +38,23 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="production" class="col-md-3 control-label">উতপাদন(টন/হেঃ)</label>
+                                        <label for="production" class="col-md-3 control-label">উতপাদন(মেট্রিক টন/হেঃ)</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" name="production" placeholder="উতপাদন(টন/হেঃ)" >
+                                            <input type="text" class="form-control" name="production" placeholder="উতপাদন(মেট্রিক টন/হেঃ)" >
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="fcomment" class="col-md-3 control-label">কৃষকের মন্তব্য </label>
+                                        <label for="bij" class="col-md-3 control-label">চূড়ান্ত সংরক্ষিত বীজের পরিমাণ</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" name="fcomment" placeholder="কৃষকের মন্তব্য ">
+                                            <input type="text" class="form-control" name="bij" placeholder="চূড়ান্ত সংরক্ষিত বীজের পরিমাণ" >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="fcomment" class="col-md-3 control-label">কৃষকের/কৃষাণির মন্তব্য </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="fcomment" placeholder="কৃষকের/কৃষাণির মন্তব্য ">
                                         </div>
                                     </div>
 
@@ -87,18 +65,10 @@
                                         </div>
                                     </div>
 
-                                   
+
                                     <div class="form-group">
-                                        <label for="year" class="col-md-3 control-label">বছর</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" name="year" placeholder="year" value="<%=records.year%>">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="year" class="col-md-3 control-label">userid</label>
-                                        <div class="col-md-9">
-                                            <input type="number" class="form-control" name="id" placeholder="id" value="<%=records.upazilla_id%>">
+                                            <input type="hidden" class="form-control" name="user_id" placeholder="id" value="<%= user_id %>">
                                         </div>
                                     </div>
                                     

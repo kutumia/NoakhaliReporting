@@ -20,10 +20,25 @@ module.exports = (sequelize, Sequelize) => {
       village: {
         type: Sequelize.STRING
       },
+      bornona: {
+        type: Sequelize.STRING
+      },
+      podobi: {
+        type: Sequelize.STRING
+      },
       mobile: {
         type: Sequelize.STRING
       },
       comment: {
+        type: Sequelize.STRING
+      },
+      ddComment: {
+        type: Sequelize.STRING
+      },
+      pdComment: {
+        type: Sequelize.STRING
+      },
+      batch: {
         type: Sequelize.STRING
       },
       year: {

@@ -17,6 +17,9 @@ module.exports = (sequelize, Sequelize) => {
       breedname: {
         type: Sequelize.STRING
       },
+      germinationRate: {
+        type: Sequelize.STRING
+      },
       trialdate: {
         type: Sequelize.STRING
       },
@@ -24,6 +27,12 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       kphone: {
+        type: Sequelize.STRING
+      },
+      ddComment: {
+        type: Sequelize.STRING
+      },
+      pdComment: {
         type: Sequelize.STRING
       },
       year: {

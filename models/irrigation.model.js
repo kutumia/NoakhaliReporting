@@ -23,6 +23,12 @@ module.exports = (sequelize, Sequelize) => {
       comment: {
         type: Sequelize.STRING
       },
+      ddComment: {
+        type: Sequelize.STRING
+      },
+      pdComment: {
+        type: Sequelize.STRING
+      },
       year: {
         type: Sequelize.STRING
       },

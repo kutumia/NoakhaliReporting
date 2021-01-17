@@ -142,7 +142,6 @@ module.exports.trainedFarmer=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/trainedFarmer/trainedFarmer', { title: 'প্রশিক্ষণপ্রাপ্ত কৃষকের তথ্য',success:''});
     }
      
     //  records:result
@@ -159,8 +158,7 @@ module.exports.trainedFarmerFilter=async(req,res)=>{
         });
     })
     .catch(err => {
-        res.render('pd/trainedFarmer/trainedFarmerYear', { title: 'প্রশিক্ষণপ্রাপ্ত কৃষকের তথ্য',success:'', records: err });
-    })
+        res.render('errorpage',err);    })
 
 };
 
@@ -173,10 +171,40 @@ module.exports.trainedFarmerDistrictFilter=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/trainedFarmer/trainedFarmer', { title: 'প্রশিক্ষণপ্রাপ্ত কৃষকের তথ্য',success:'', upazillas:err });
     }
      
 
+};
+
+module.exports.trainedFarmerEdit=async(req,res)=>{
+        await trainedFarmer.findByPk(req.params.id)
+        .then(data => {
+            console.log("inside",data);
+            res.render('pd/trainedFarmer/trainedFarmerEdit', { title: 'প্রশিক্ষণপ্রাপ্ত কৃষকের তথ্য ফর্ম',success:'',records: data });
+        })
+        .catch(err => {
+            console.log("outside",err);
+        })
+
+    //  records:result
+
+};
+
+module.exports.trainedFarmerEditPost=async(req,res)=>{
+    var pdComment= req.body.pdComment;
+    console.log("req.params.id",req.params.id);
+    await trainedFarmer.update({
+        pdComment:pdComment
+    },{
+        where: {id: req.params.id}
+    })
+    
+        
+        .then(data => {
+            res.redirect('/pd/trainedFarmer');
+        }).catch(err => {
+            res.render('errorpage',err);
+        });
 };
 //trainedFarmer controller end
 
@@ -189,7 +217,6 @@ module.exports.initialTrial=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/initialTrial/initialTrial', { title: 'প্রদর্শনীর প্রাথমিক প্রতিবেদন',success:''});
     }
      
     //  records:result
@@ -206,7 +233,7 @@ module.exports.initialTrialFilter=async(req,res)=>{
         });
     })
     .catch(err => {
-        res.render('pd/initialTrial/initialTrialYear', { title: 'প্রদর্শনীর প্রাথমিক প্রতিবেদন',success:'', records: err });
+        console.log("error",err);
     })
 
 };
@@ -217,11 +244,40 @@ module.exports.initialTrialDistrictFilter=async(req,res)=>{
         res.send(upazillass)
     }
     catch(err){
-        console.log("outside",err);
-        res.render('pd/initialTrial/initialTrial', { title: 'প্রদর্শনীর প্রাথমিক প্রতিবেদন',success:'', upazillas:err });
+        console.log("error",err);
     }
      
 
+};
+module.exports.initialTrialEdit=async(req,res)=>{
+    await initialTrial.findByPk(req.params.id)
+    .then(data => {
+        console.log("inside initialTrialEdit",data);
+        res.render('pd/initialTrial/initialTrialEdit', { title: 'প্রদর্শনীর প্রাথমিক প্রতিবেদন ফর্ম',success:'',records: data });
+    })
+    .catch(err => {
+        console.log("outside",err);
+    })
+
+//  records:result
+
+};
+
+module.exports.initialTrialEditPost=async(req,res)=>{
+var pdComment= req.body.pdComment;
+console.log("req.params.id",req.params.id);
+await initialTrial.update({
+    pdComment:pdComment
+},{
+    where: {id: req.params.id}
+})
+
+    
+    .then(data => {
+        res.redirect('/pd/initialTrial');
+    }).catch(err => {
+        res.render('errorpage',err);
+    });
 };
 //initialTrial controller end
 
@@ -234,7 +290,6 @@ module.exports.finalTrial=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/finalTrial/finalTrial', { title: 'প্রদর্শনীর চূড়ান্ত প্রতিবেদন',success:''});
     }
     //  records:result
 
@@ -250,7 +305,7 @@ module.exports.finalTrialFilter=async(req,res)=>{
         });
     })
     .catch(err => {
-        res.render('pd/finalTrial/finalTrialYear', { title: 'প্রদর্শনীর চূড়ান্ত প্রতিবেদন',success:'', records: err });
+        res.render('errorpage',err);
     })
 
 };
@@ -262,10 +317,39 @@ module.exports.finalTrialDistrictFilter=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/finalTrial/finalTrial', { title: 'প্রদর্শনীর চূড়ান্ত প্রতিবেদন',success:'', upazillas:err });
     }
      
 
+};
+module.exports.finalTrialEdit=async(req,res)=>{
+    await finalTrial.findByPk(req.params.id)
+    .then(data => {
+        console.log("inside",data);
+        res.render('pd/finalTrial/finalTrialEdit', { title: 'প্রদর্শনীর চূড়ান্ত প্রতিবেদন ফর্ম',success:'',records: data });
+    })
+    .catch(err => {
+        res.render('errorpage',err);
+    })
+
+//  records:result
+
+};
+
+module.exports.finalTrialEditPost=async(req,res)=>{
+var pdComment= req.body.pdComment;
+console.log("req.params.id",req.params.id);
+await finalTrial.update({
+    pdComment:pdComment
+},{
+    where: {id: req.params.id}
+})
+
+    
+    .then(data => {
+        res.redirect('/pd/finalTrial');
+    }).catch(err => {
+        res.render('errorpage',err);
+    });
 };
 //finalTrial controller end
 
@@ -278,7 +362,6 @@ module.exports.agriFair=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/agriFair/agriFair', { title: 'কৃষি মেলা তথ্য',success:''});
     }
      
     //  records:result
@@ -295,8 +378,7 @@ module.exports.agriFairFilter=async(req,res)=>{
         });
     })
     .catch(err => {
-        res.render('pd/agriFair/agriFairYear', { title: 'কৃষি মেলা তথ্য',success:'', records: err });
-    })
+        res.render('errorpage',err);    })
 
 };
 
@@ -309,10 +391,39 @@ module.exports.agriFairDistrictFilter=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/agriFair/agriFair', { title: 'কৃষি মেলা তথ্য',success:'', upazillas:err });
     }
      
 
+};
+module.exports.agriFairEdit=async(req,res)=>{
+    await agriFair.findByPk(req.params.id)
+    .then(data => {
+        console.log("inside",data);
+        res.render('pd/agriFair/agriFairEdit', { title: 'কৃষি মেলা তথ্য ফর্ম',success:'',records: data });
+    })
+    .catch(err => {
+        console.log("outside",err);
+    })
+
+//  records:result
+
+};
+
+module.exports.agriFairEditPost=async(req,res)=>{
+var pdComment= req.body.pdComment;
+console.log("req.params.id",req.params.id);
+await agriFair.update({
+    pdComment:pdComment
+},{
+    where: {id: req.params.id}
+})
+
+    
+    .then(data => {
+        res.redirect('/pd/agriFair');
+    }).catch(err => {
+        res.render('errorpage',err);
+    });
 };
 //agriFair controller end
 
@@ -325,7 +436,6 @@ module.exports.irrigation=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/irrigation/irrigation', { title: 'সেচ অবকাঠামো নির্মাণ তথ্য',success:''});
     }
      
     //  records:result
@@ -342,8 +452,7 @@ module.exports.irrigationFilter=async(req,res)=>{
         });
     })
     .catch(err => {
-        res.render('pd/irrigation/irrigationYear', { title: 'সেচ অবকাঠামো নির্মাণ তথ্য',success:'', records: err });
-    })
+        res.render('errorpage',err);    })
 
 };
 
@@ -356,10 +465,39 @@ module.exports.irrigationDistrictFilter=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/irrigation/irrigation', { title: 'সেচ অবকাঠামো নির্মাণ তথ্য',success:'', upazillas:err });
     }
      
 
+};
+module.exports.irrigationEdit=async(req,res)=>{
+    await irrigation.findByPk(req.params.id)
+    .then(data => {
+        console.log("inside",data);
+        res.render('pd/irrigation/irrigationEdit', { title: 'সেচ অবকাঠামো নির্মাণ তথ্য ফর্ম',success:'',records: data });
+    })
+    .catch(err => {
+        console.log("outside",err);
+    })
+
+//  records:result
+
+};
+
+module.exports.irrigationEditPost=async(req,res)=>{
+var pdComment= req.body.pdComment;
+console.log("req.params.id",req.params.id);
+await irrigation.update({
+    pdComment:pdComment
+},{
+    where: {id: req.params.id}
+})
+
+    
+    .then(data => {
+        res.redirect('/pd/irrigation');
+    }).catch(err => {
+        res.render('errorpage',err);
+    });
 };
 //irrigation controller end
 
@@ -372,7 +510,6 @@ module.exports.machinery=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/machinery/machinery', { title: 'কৃষি যন্ত্রপাতি বিতরণ প্রতিবেদন তথ্য',success:''});
     }
      
     //  records:result
@@ -389,7 +526,7 @@ module.exports.machineryFilter=async(req,res)=>{
         });
     })
     .catch(err => {
-        res.render('pd/machinery/machineryYear', { title: 'কৃষি যন্ত্রপাতি বিতরণ প্রতিবেদন তথ্য',success:'', records: err });
+        res.render('errorpage',err);
     })
 
 };
@@ -403,10 +540,39 @@ module.exports.machineryDistrictFilter=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/machinery/machinery', { title: 'কৃষি যন্ত্রপাতি বিতরণ প্রতিবেদন তথ্য',success:'', upazillas:err });
     }
      
 
+};
+module.exports.machineryEdit=async(req,res)=>{
+    await machinery.findByPk(req.params.id)
+    .then(data => {
+        console.log("inside",data);
+        res.render('pd/machinery/machineryEdit', { title: 'কৃষি যন্ত্রপাতি বিতরণ প্রতিবেদন তথ্য ফর্ম',success:'',records: data });
+    })
+    .catch(err => {
+        console.log("outside",err);
+    })
+
+//  records:result
+
+};
+
+module.exports.machineryEditPost=async(req,res)=>{
+var pdComment= req.body.pdComment;
+console.log("req.params.id",req.params.id);
+await machinery.update({
+    pdComment:pdComment
+},{
+    where: {id: req.params.id}
+})
+
+    
+    .then(data => {
+        res.redirect('/pd/machinery');
+    }).catch(err => {
+        res.render('errorpage',err);
+    });
 };
 //machinery controller end
 
@@ -419,7 +585,6 @@ module.exports.motivation=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/motivation/motivation', { title: 'উদ্বুদ্ধকরণ ভ্রমণ তথ্য',success:''});
     }
      
     //  records:result
@@ -436,8 +601,7 @@ module.exports.motivationFilter=async(req,res)=>{
         });
     })
     .catch(err => {
-        res.render('pd/motivation/motivationYear', { title: 'উদ্বুদ্ধকরণ ভ্রমণ তথ্য',success:'', records: err });
-    })
+        res.render('errorpage',err);    })
 
 };
 
@@ -450,10 +614,39 @@ module.exports.motivationDistrictFilter=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/motivation/motivation', { title: 'উদ্বুদ্ধকরণ ভ্রমণ তথ্য',success:'', upazillas:err });
     }
      
 
+};
+module.exports.motivationEdit=async(req,res)=>{
+    await motivation.findByPk(req.params.id)
+    .then(data => {
+        console.log("inside",data);
+        res.render('pd/motivation/motivationEdit', { title: 'প্রশিক্ষণপ্রাপ্ত কৃষকের তথ্য ফর্ম',success:'',records: data });
+    })
+    .catch(err => {
+        console.log("outside",err);
+    })
+
+//  records:result
+
+};
+
+module.exports.motivationEditPost=async(req,res)=>{
+var pdComment= req.body.pdComment;
+console.log("req.params.id",req.params.id);
+await motivation.update({
+    pdComment:pdComment
+},{
+    where: {id: req.params.id}
+})
+
+    
+    .then(data => {
+        res.redirect('/pd/motivation');
+    }).catch(err => {
+        res.render('errorpage',err);
+    });
 };
 //motivation controller end
 
@@ -466,7 +659,6 @@ module.exports.fieldDay=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/fieldDay/fieldDay', { title: 'মাঠ দিবস তথ্য',success:''});
     }
      
     //  records:result
@@ -483,8 +675,8 @@ module.exports.fieldDayFilter=async(req,res)=>{
         });
     })
     .catch(err => {
-        res.render('pd/fieldDay/fieldDayYear', { title: 'মাঠ দিবস তথ্য',success:'', records: err });
-    })
+        res.render('errorpage',err);
+        })
 
 };
 
@@ -497,9 +689,38 @@ module.exports.fieldDayDistrictFilter=async(req,res)=>{
     }
     catch(err){
         console.log("outside",err);
-        res.render('pd/fieldDay/fieldDay', { title: 'মাঠ দিবস তথ্য',success:'', upazillas:err });
     }
      
 
+};
+module.exports.fieldDayEdit=async(req,res)=>{
+    await fieldDay.findByPk(req.params.id)
+    .then(data => {
+        console.log("inside",data);
+        res.render('pd/fieldDay/fieldDayEdit', { title: 'প্রশিক্ষণপ্রাপ্ত কৃষকের তথ্য ফর্ম',success:'',records: data });
+    })
+    .catch(err => {
+        console.log("outside",err);
+    })
+
+//  records:result
+
+};
+
+module.exports.fieldDayEditPost=async(req,res)=>{
+var pdComment= req.body.pdComment;
+console.log("req.params.id",req.params.id);
+await fieldDay.update({
+    pdComment:pdComment
+},{
+    where: {id: req.params.id}
+})
+
+    
+    .then(data => {
+        res.redirect('/pd/fieldDay');
+    }).catch(err => {
+        res.render('errorpage',err);
+    });
 };
 //fieldDay controller end

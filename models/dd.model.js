@@ -8,6 +8,9 @@ module.exports = (sequelize, Sequelize) => {
       uname: {
         type: Sequelize.STRING
       },
+      district: {
+        type: Sequelize.STRING
+      },
       password: {
         type: Sequelize.STRING
       },

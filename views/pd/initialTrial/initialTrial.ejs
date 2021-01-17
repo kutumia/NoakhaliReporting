@@ -13,47 +13,47 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row clearfix">
-                                    <%if (district.length >0){ %>
                                         <div class="col-md-3">
-                                            <label for="district">Choose a District:</label>
+                                            <label for="district">বাছুন:</label>
                                                 <select id="district" name="district">
+                                                    <option value="">জেলা বাছুন:</option>
+                                                    <%if (district.length >0){ %>
                                                     <% district.forEach(function(row){ %>
-                                                        <option value="<%= row.id %>"><%= row.uname %></option>
+                                                        <option value="<%= row.id %>"><%= row.district %></option>
                                                     <% }) %>
+                                                    <% } %>
+
                                                 </select>
                                         </div>
-                                    <% } %>
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <select name="upazilla" id="upazilla" class="form-control">
-                                                    <option value="0" disabled="true" selected="true">Select upazilla</option>
+                                                    <option value="0" disabled="true" selected="true">উপজেলা বাছুন</option>
                                                 </select>
                                             </div>
                                         </div>
                                         
                                     <div class="col-md-3">
-                                        <label for="year">Choose a year:</label>
+                                        <label for="year">বছর বাছুন:</label>
                                         <select id="year" name="year">
-                                            <option value="">Choose year</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2018">2018</option>
-                                            <option value="2019">2019</option>
-                                            <option value="2020" selected>2020</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
+                                            <option value="2017">২০১৭-১৮</option>
+                                            <option value="2018">২০১৮-১৯</option>
+                                            <option value="2019">২০১৯-২০</option>
+                                            <option value="2020" selected>২০২০-২১</option>
+                                            <option value="2021">২০২১-২২</option>
+                                            <option value="2022">২০২২-২৩</option>
+                                            <option value="2023">২০২৩-২৪</option>
                                         </select>
                                     </div>
                                     <div class="col-md-3">
                                         <!-- Button -->                                        
                                         <div>
-                                        <input type="submit" id="submit" name="submit" value="submit" class="btn btn-primary">   
+                                        <input type="submit" id="submit" name="submit" value="রিপোর্ট দেখুন" class="btn btn-primary">   
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
 
                         <div class="table-responsive" id="output"></div>
 
@@ -116,7 +116,7 @@
                 $('#upazilla').empty();
                 if(data){
                     $.each(data, function(key, value){
-                    $('#upazilla').append('<option value="'+value.id+'">' + value.uname + '</option>');
+                    $('#upazilla').append('<option value="'+value.id+'">' + value.upazilla + '</option>');
 
                 });
                 }else {

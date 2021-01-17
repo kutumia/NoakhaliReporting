@@ -47,13 +47,19 @@
                 <% }) %>
               </select>
 
-              <label>Choose District:</label>
-              <select name="uname" class="form-control">
-                <option value="Noakhali">Noakhali</option>
-                <option value="Feni">Feni</option>
-                <option value="Lakshmipur">Lakshmipur</option>
-                <option value="Chattogram">Chattogram</option>
-                <option value="Chandpur">Chandpur</option>
+              <div class="wrap-input100 validate-input" data-validate="User Name is required">
+                <input class="input100" type="text" name="uname" >
+                <span class="focus-input100"></span>
+                <span class="label-input100">User Name</span>
+              </div>
+
+              <label>জেলা বাছুন:</label>
+              <select name="district" class="form-control">
+                <option value="নোয়াখালী">নোয়াখালী</option>
+                <option value="ফেনী">ফেনী</option>
+                <option value="লক্ষীপুর">লক্ষীপুর</option>
+                <option value="চট্টগ্রাম">চট্টগ্রাম</option>
+                <option value="চাঁদপুর">চাঁদপুর</option>
               </select>
               
               <div class="wrap-input100 validate-input" data-validate="Password is required">

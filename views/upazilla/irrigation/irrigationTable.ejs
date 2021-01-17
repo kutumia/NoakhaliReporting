@@ -8,7 +8,9 @@
         <th>বারিড পাইপের সংখ্যা ও দৈর্ঘ্য</th>
         <th>বারিড পাইপের অবস্থান( ইউনিয়ন ও গ্রামের অবস্থান)</th>
         <th>সেচের আওতায় জমির পরিমাণ</th>
-        <th>মন্তব্য</th>
+        <th>উপজেলা কৃষি অফিসারের মন্তব্য</th>
+        <th>উপ-পরিচালকের মন্তব্য</th>
+        <th>প্রকল্প পরিচালকের মন্তব্য</th>
         <th>পরিবর্তন/মুছুন</th>
     </tr>
     </thead>
@@ -22,6 +24,8 @@
                 <td><%= row.union %></td>
                 <td><%= row.jomi%></td>
                 <td><%= row.comment %></td>
+                <td><%= row.ddComment %></td>
+                <td><%= row.pdComment %></td>
                 <td><a class="btn btn-primary btn-xs" href="/upazilla/irrigationEdit/<%= row.id %>"><i class="fa fa-edit"></i></a>
                     <a class="btn btn-danger btn-xs" href="/upazilla/irrigationDelete/<%= row.id %>"><i class="fa fa-trash"></i></a>
                 </td>
@@ -39,8 +43,9 @@
         <th>বারিড পাইপের সংখ্যা ও দৈর্ঘ্য</th>
         <th>বারিড পাইপের অবস্থান( ইউনিয়ন ও গ্রামের অবস্থান)</th>
         <th>সেচের আওতায় জমির পরিমাণ</th>
-        <th>মন্তব্য</th>
-        <th>পরিবর্তন/মুছুন</th>
+        <th>উপজেলা কৃষি অফিসারের মন্তব্য</th>
+        <th>উপ-পরিচালকের মন্তব্য</th>
+        <th>প্রকল্প পরিচালকের মন্তব্য</th>
         </tr>
         </thead>
         <tbody>

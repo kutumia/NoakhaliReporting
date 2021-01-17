@@ -40,17 +40,23 @@
                 Upazilla SignUp
               </span>
 
-              <label>Choose District:</label>
+              <label>জেলা বাছুন:</label>
               <select name="dds" class="form-control">
                 <% records.forEach(function(row){ %>
-                    <option value=<%= row.id%> ><%= row.uname%> </option>
+                    <option value=<%= row.id%> ><%= row.district%> </option>
                 <% }) %>
               </select>
+
+              <div class="wrap-input100 validate-input" data-validate="উপজেলার নাম is required" >
+                <input class="input100" type="text"  name="upazillas" >
+                <span class="focus-input100"></span>
+                <span class="label-input100">উপজেলার নাম</span>
+              </div>
 
               <div class="wrap-input100 validate-input" data-validate="User Name is required" >
                 <input class="input100" type="uname"  name="uname" >
                 <span class="focus-input100"></span>
-                <span class="label-input100">Upazilla Name</span>
+                <span class="label-input100">User Name</span>
               </div>
               
               <div class="wrap-input100 validate-input" data-validate="Password is required">

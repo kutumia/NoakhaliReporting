@@ -7,9 +7,12 @@
         <th>উপজেলার নাম</th>
         <th>প্রদর্শিত বুথ/স্টলের সংখ্যা</th>
         <th>প্রদর্শিত প্রযুক্তিসমূহ</th>
-        <th>উদ্বোধকের নাম ও পরিচয়</th>
+        <th>উদ্বোধকের নাম ও পদবী</th>
         <th>মন্তব্য</th>
-        <th>পরিবর্তন/মুছুন</th>
+        <th>উপজেলা কৃষি অফিসারের মন্তব্য</th>
+        <th>উপ-পরিচালকের মন্তব্য</th>
+        <th>প্রকল্প পরিচালকের মন্তব্য</th>
+        <th>মন্তব্য করুন</th>
     </tr>
     </thead>
     <tbody>
@@ -22,9 +25,9 @@
                 <td><%= row.technology %></td>
                 <td><%= row.name%></td>
                 <td><%= row.comment %></td>
-                <td><a class="btn btn-primary btn-xs" href="/upazilla/agriFairEdit/<%= row.id %>"><i class="fa fa-edit"></i></a>
-                    <a class="btn btn-danger btn-xs" href="/upazilla/agriFairDelete/<%= row.id %>"><i class="fa fa-trash"></i></a>
-                </td>
+                <td><%= row.ddComment %></td>
+                <td><%= row.pdComment %></td>
+                <td><a class="btn btn-primary btn-xs" href="/dd/agriFairEdit/<%= row.id %>"><i class="fa fa-edit"></i></a></td>
             </tr>
         <% }) %>
     </tbody>
@@ -38,8 +41,10 @@
             <th>উপজেলার নাম</th>
             <th>প্রদর্শিত বুথ/স্টলের সংখ্যা</th>
             <th>প্রদর্শিত প্রযুক্তিসমূহ</th>
-            <th>উদ্বোধকের নাম ও পরিচয়</th>
-            <th>মন্তব্য</th>
+            <th>উদ্বোধকের নাম ও পদবী</th>
+            <th>উপজেলা কৃষি অফিসারের মন্তব্য</th>
+            <th>উপ-পরিচালকের মন্তব্য</th>
+            <th>প্রকল্প পরিচালকের মন্তব্য</th>
         </tr>
         </thead>
         <tbody>

@@ -1,0 +1,81 @@
+<%- include('../../includes/header')-%>
+        <div class="wrapper">
+          <%- include('../../includes/topbar')-%>
+            <div class="page-wrap">
+              <%- include('../../includes/sidebar')-%>
+              <div class="main-content">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title"><h2>কৃষি মেলা তথ্য ফর্ম</h2></div>
+                                <p><%
+                                if(success !=''){ %>
+                                <%= success %>
+                                    <% } %>
+                                </p>
+                                </div>  
+                            <div class="panel-body" >
+                                <form action="/upazilla/agriFairEditPost/<%=records.id%>" id="FieldTrialForm" class="form-horizontal" method="post"  role="form">
+                                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                                        <p>Error:</p>
+                                        <span></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="booth" class="col-md-3 control-label">প্রদর্শিত বুথ/স্টলের সংখ্যা</label>
+                                        <div class="col-md-9">
+                                        <input type="text" class="form-control" name="booth" placeholder="প্রদর্শিত বুথ/স্টলের সংখ্যা" value="<%=records.booth%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="technology" class="col-md-3 control-label">প্রদর্শিত প্রযুক্তিসমূহ</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="technology" placeholder="প্রদর্শিত প্রযুক্তিসমূহ" value="<%=records.technology%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="name" class="col-md-3 control-label">উদ্বোধকের নাম ও পদবী</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="name" placeholder="উদ্বোধকের নাম ও পদবী" value="<%=records.name%>">
+                                        </div>
+                                    </div>
+
+                                    
+                                
+                                    <div class="form-group">
+                                        <label for="comment" class="col-md-3 control-label">মন্তব্য</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="comment" placeholder="মন্তব্য " value="<%=records.comment%>">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-md-9">
+                                            <input type="hidden" class="form-control" name="user_id" placeholder="id" value="<%= user_id %>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <!-- Button -->                                        
+                                        <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" name="submit" value="submit" class="btn btn-primary">   
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                        
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('../../includes/footer')-%>

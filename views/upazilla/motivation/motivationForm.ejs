@@ -23,32 +23,14 @@
                                         <span></span>
                                     </div>
 
-                                        
-                                    <div class="form-group">
-                                        <label for="district" class="col-md-3 control-label">জেলার নাম</label>
-                                        <div class="col-md-9">
-                                            <label for="district">জেলার নাম বাছুন:</label>
-                                        <select id="district" name="district" required>
-                                            <option value="চাঁদপুর">চাঁদপুর</option>
-                                        <option value="নোয়াখালি">নোয়াখালি</option>
-                                        <option value="ফেনী">ফেনী</option>
-                                        <option value="চট্টগ্রাম">চট্টগ্রাম </option>
-                                        <option value="লক্ষীপুর">লক্ষীপুর</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    <input type="hidden" class="form-control" name="district" placeholder="জেলার নাম" value="<%=dds%>">
+                                    <input type="hidden" class="form-control" name="upazilla" placeholder="উপজেলার নাম" value="<%=upazillas%>">
                                     
-                                    <div class="form-group">
-                                        <label for="upazilla" class="col-md-3 control-label">উপজেলার নাম</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="upazilla" placeholder="উপজেলার নাম ">
-                                        </div>
-                                    </div>
 
                                     <div class="form-group">
-                                        <label for="name" class="col-md-3 control-label">কৃষকের নাম ও পিতা/স্বামীর নাম</label>
+                                        <label for="name" class="col-md-3 control-label">কৃষকের/কৃষাণির নাম ও পিতা/স্বামীর নাম</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" name="name" placeholder="কৃষকের নাম ও পিতা/স্বামীর নাম">
+                                            <input type="text" class="form-control" name="name" placeholder="কৃষকের/কৃষাণির নাম ও পিতা/স্বামীর নাম">
                                         </div>
                                     </div>
 
@@ -74,6 +56,20 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="podobi" class="col-md-3 control-label">উদ্বোধণকারীর নাম ও পদবী</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="podobi" placeholder="উদ্বোধণকারীর নাম ও পদবী"> 
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group">
+                                        <label for="bornona" class="col-md-3 control-label">ভ্রমণকৃত স্থানের নাম ও বর্ণনা</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="bornona" placeholder="ভ্রমণকৃত স্থানের নাম ও বর্ণনা">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="comment" class="col-md-3 control-label">মন্তব্য</label>
                                         <div class="col-md-9">
                                             <input type="text" class="form-control" name="comment" placeholder="মন্তব্য">
@@ -81,16 +77,42 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="year" class="col-md-3 control-label">বছর</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" name="year" placeholder="বছর">
+                                            <label for="year">বছর :</label>
+                                        <select id="year" name="year" required>
+                                            <option value="2017">২০১৭-১৮</option>
+                                            <option value="2018">২০১৮-১৯</option>
+                                            <option value="2019">২০১৯-২০</option>
+                                            <option value="2020">২০২০-২১</option>
+                                            <option value="2021">২০২১-২২</option>
+                                            <option value="2022">২০২২-২৩</option>
+                                        </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="year" class="col-md-3 control-label">userid</label>
+                                        <label for="batch" class="col-md-3 control-label">ব্যাচ নং</label>
                                         <div class="col-md-9">
-                                            <input type="number" class="form-control" name="user_id" placeholder="id" value="<%= user_id %>">
+                                            <label for="batch">Choose a batch no:</label>
+                                        <select id="batch" name="batch" required>
+                                            <option value="">Choose batch</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-9">
+                                            <input type="hidden" class="form-control" name="user_id" placeholder="id" value="<%= user_id %>">
                                         </div>
                                     </div>
                                     

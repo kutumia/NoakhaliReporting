@@ -11,7 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var upazillaRouter = require('./routes/upazilla');
 var pdRouter = require('./routes/pd');
-var adRouter = require('./routes/ad');
+// var adRouter = require('./routes/ad');
 var ddRouter = require('./routes/dd');
 
 
@@ -40,7 +40,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/upazilla', upazillaRouter);
 app.use('/pd', pdRouter);
-app.use('/ad', adRouter);
+// app.use('/ad', adRouter);
 app.use('/dd', ddRouter);
 
 

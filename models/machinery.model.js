@@ -17,6 +17,9 @@ module.exports = (sequelize, Sequelize) => {
       number: {
         type: Sequelize.STRING
       },
+      shongothon: {
+        type: Sequelize.STRING
+      },
       farmer: {
         type: Sequelize.STRING
       },
@@ -27,6 +30,12 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       bitoron: {
+        type: Sequelize.STRING
+      },
+      ddComment: {
+        type: Sequelize.STRING
+      },
+      pdComment: {
         type: Sequelize.STRING
       },
       year: {

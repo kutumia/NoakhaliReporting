@@ -1,0 +1,99 @@
+<%- include('../../includes/header')-%>
+        <div class="wrapper">
+          <%- include('../../includes/topbar')-%>
+            <div class="page-wrap">
+              <%- include('../../includes/sidebar')-%>
+              <div class="main-content">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title"><h2>কৃষি যন্ত্রপাতি বিতরণ প্রতিবেদন ফর্ম</h2></div>
+                                <p><%
+                                if(success !=''){ %>
+                                <%= success %>
+                                    <% } %>
+                                </p>
+                                </div>  
+                            <div class="panel-body" >
+                                <form action="/upazilla/machineryEditPost/<%=records.id%>" id="FieldTrialForm" class="form-horizontal" method="post"  role="form">
+                                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                                        <p>Error:</p>
+                                        <span></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="machine" class="col-md-3 control-label">যন্ত্রপাতির নাম </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="machine" placeholder="যন্ত্রপাতির নাম" value="<%=records.machine%>" >
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="shongothon" class="col-md-3 control-label">কৃষক সংগঠনের নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="shongothon" placeholder="কৃষক সংগঠনের নাম" value="<%=records.shongothon%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="number" class="col-md-3 control-label">সংখ্যা </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="number" placeholder="সংখ্যা " value="<%=records.number%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="farmer" class="col-md-3 control-label">উপকারভোগী কৃষকের/কৃষাণির নাম ও পিতা/স্বামীর নাম </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="farmer" placeholder="উপকারভোগী কৃষকের/কৃষাণির নাম ও পিতা/স্বামীর নাম " value="<%=records.farmer%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="village" class="col-md-3 control-label">গ্রাম/ব্লক </label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="village" placeholder="গ্রাম/ব্লক " value="<%=records.village%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mobile" class="col-md-3 control-label">মোবাইল নম্বর</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="mobile" placeholder="মোবাইল নম্বর " value="<%=records.mobile%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="bitoron" class="col-md-3 control-label">বিতরণের তারিখ </label>
+                                        <div class="col-md-9">
+                                            <input type="date" class="form-control" name="bitoron" placeholder="বিতরণের তারিখ " value="<%=records.bitoron%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-9">
+                                            <input type="hidden" class="form-control" name="user_id" placeholder="id" value="<%= user_id %>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <!-- Button -->                                        
+                                        <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" name="submit" value="submit" class="btn btn-primary">   
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                        
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('../../includes/footer')-%>

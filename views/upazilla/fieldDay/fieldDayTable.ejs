@@ -3,11 +3,13 @@
     <thead>
     <tr>
         <th>ক্রমিক নং</th>
-        <th>কৃষকের নাম ও ঠিকানা</th>
+        <th>কৃষকের/কৃষাণির নাম ও ঠিকানা</th>
         <th>ফসলের নাম/প্রযুক্তি</th>
         <th>মাঠ দিবস বাস্তবায়নের তারিখ</th>
-        <th>সময়</th>
-        <th>মন্তব্য</th>
+        <th>কৃষকের মন্তব্য</th>
+        <th>উপজেলা কৃষি অফিসারের মন্তব্য</th>
+        <th>উপ-পরিচালকের মন্তব্য</th>
+        <th>প্রকল্প পরিচালকের মন্তব্য</th>
         <th>পরিবর্তন/মুছুন</th>
     </tr>
     </thead>
@@ -20,6 +22,8 @@
                 <td><%= row.date %></td>
                 <td><%= row.time %></td>
                 <td><%= row.comment %></td>
+                <td><%= row.ddComment %></td>
+                <td><%= row.pdComment %></td>
                 <td><a class="btn btn-primary btn-xs" href="/upazilla/fieldDayEdit/<%= row.id %>"><i class="fa fa-edit"></i></a>
                     <a class="btn btn-danger btn-xs" href="/upazilla/fieldDayDelete/<%= row.id %>"><i class="fa fa-trash"></i></a>
                 </td>
@@ -32,11 +36,13 @@
         <thead>
         <tr>
             <th>ক্রমিক নং</th>
-        <th>কৃষকের নাম ও ঠিকানা</th>
+        <th>কৃষকের/কৃষাণির নাম ও ঠিকানা</th>
         <th>ফসলের নাম/প্রযুক্তি</th>
         <th>মাঠ দিবস বাস্তবায়নের তারিখ</th>
-        <th>সময়</th>
-        <th>মন্তব্য</th>
+        <th>কৃষকের মন্তব্য</th>
+        <th>উপজেলা কৃষি অফিসারের মন্তব্য</th>
+        <th>উপ-পরিচালকের মন্তব্য</th>
+        <th>প্রকল্প পরিচালকের মন্তব্য</th>
         <th>পরিবর্তন/মুছুন</th>
         </tr>
         </thead>

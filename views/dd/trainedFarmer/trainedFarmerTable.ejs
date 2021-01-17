@@ -4,12 +4,15 @@
     <tr>
         <th>ক্রমিক নং</th>
         <th>প্রশিক্ষণার্থীর নাম ও পিতা/স্বামীর নাম</th>
-        <th>গ্রাম/ব্লক</th>
+        <th>গ্রাম ও ব্লক</th>
         <th>মোবাইল নম্বর (যদি থাকে)</th>
         <th>জাতীয় পরিচয়পত্র নম্বর</th>
+        <th>কৃষি উপকরণ কার্ডের নং</th>
         <th>প্রশিক্ষণের বিষয়</th>
         <th>প্রশিক্ষণের তারিখ</th>
-        <th>পরিবর্তন/মুছুন</th>
+        <th>উপ-পরিচালকের মন্তব্য</th>
+        <th>প্রকল্প পরিচালকের মন্তব্য</th>
+        <th>মন্তব্য করুন</th>
     </tr>
     </thead>
     <tbody>
@@ -20,11 +23,12 @@
                 <td><%= row.vname %></td>
                 <td><%= row.mnum %></td>
                 <td><%= row.nid %></td>
+                <td><%= row.card%></td>
                 <td><%= row.topic%></td>
                 <td><%= row.date %></td>
-                <td><a class="btn btn-primary btn-xs" href="/upazilla/trainedFarmerEdit/<%= row.id %>"><i class="fa fa-edit"></i></a>
-                    <a class="btn btn-danger btn-xs" href="/upazilla/trainedFarmerDelete/<%= row.id %>"><i class="fa fa-trash"></i></a>
-                </td>
+                <td><%= row.ddComment %></td>
+                <td><%= row.pdComment %></td>
+                <td><a class="btn btn-primary btn-xs" href="/dd/trainedFarmerEdit/<%= row.id %>"><i class="fa fa-edit"></i></a></td>
             </tr>
         <% }) %>
     </tbody>
@@ -35,12 +39,14 @@
         <tr>
             <th>ক্রমিক নং</th>
             <th>প্রশিক্ষণার্থীর নাম ও পিতা/স্বামীর নাম</th>
-            <th>গ্রাম/ব্লক</th>
+            <th>গ্রাম ও ব্লক</th>
             <th>মোবাইল নম্বর (যদি থাকে)</th>
             <th>জাতীয় পরিচয়পত্র নম্বর</th>
+            <th>কৃষি উপকরণ কার্ডের নং</th>
             <th>প্রশিক্ষণের বিষয়</th>
             <th>প্রশিক্ষণের তারিখ</th>
-            <th>পরিবর্তন/মুছুন</th>
+            <th>উপ-পরিচালকের মন্তব্য</th>
+            <th>প্রকল্প পরিচালকের মন্তব্য</th>
         </tr>
         </thead>
         <tbody>

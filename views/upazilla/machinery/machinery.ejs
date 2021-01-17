@@ -14,13 +14,13 @@
 
                                 <select id="year" name="year">
                                     <option value="">Choose year</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020" selected>2020</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023">2023</option>
+                                    <option value="2017">২০১৭-১৮</option>
+                                    <option value="2018">২০১৮-১৯</option>
+                                    <option value="2019">২০১৯-২০</option>
+                                    <option value="2020" selected>২০২০-২১</option>
+                                    <option value="2021">২০২১-২২</option>
+                                    <option value="2022">২০২২-২৩</option>
+                                    <option value="2023">২০২৩-২৪</option>
                                 </select>
                             </div>
                         </div>
@@ -76,8 +76,8 @@
 
     $("#wrapper").load( "no url rn",function() {
         
-        var year = new Date().getFullYear();
-        $.ajax({
+        var year = $('#year').val();
+         $.ajax({
             type: "POST",
             url: "/upazilla/machineryYear",
             data: {year: year},

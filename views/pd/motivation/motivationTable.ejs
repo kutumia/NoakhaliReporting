@@ -5,12 +5,15 @@
         <th>ক্রমিক নং</th>
         <th>জেলার নাম</th>
         <th>উপজেলার নাম</th>
-        <th>কৃষকের নাম ও পিতা/স্বামীর নাম</th>
+        <th>কৃষকের/কৃষাণির নাম ও পিতা/স্বামীর নাম</th>
         <th>জাতীয় পরিচয়পত্র নম্বর</th>
         <th>গ্রাম/ব্লক</th>
         <th>মোবাইল নম্বর</th>
-        <th>মন্তব্য</th>
-        <th>পরিবর্তন/মুছুন</th>
+        <th>উপজেলা কৃষি অফিসারের মন্তব্য</th>
+        <th>উপ-পরিচালকের মন্তব্য</th>
+        <th>প্রকল্প পরিচালকের মন্তব্য</th>
+        <th>মন্তব্য করুন</th>
+
 
     </tr>
     </thead>
@@ -25,9 +28,10 @@
                 <td><%= row.village%></td>
                 <td><%= row.mobile %></td>
                 <td><%= row.comment %></td>
-                <td><a class="btn btn-primary btn-xs" href="/upazilla/motivationEdit/<%= row.id %>"><i class="fa fa-edit"></i></a>
-                    <a class="btn btn-danger btn-xs" href="/upazilla/motivationDelete/<%= row.id %>"><i class="fa fa-trash"></i></a>
-                </td>
+                <td><%= row.ddComment %></td>
+                <td><%= row.pdComment %></td>
+                <td><a class="btn btn-primary btn-xs" href="/pd/motivationEdit/<%= row.id %>"><i class="fa fa-edit"></i></a></td>
+              
             </tr>
         <% }) %>
     </tbody>
@@ -39,11 +43,13 @@
             <th>ক্রমিক নং</th>
         <th>জেলার নাম</th>
         <th>উপজেলার নাম</th>
-        <th>কৃষকের নাম ও পিতা/স্বামীর নাম</th>
+        <th>কৃষকের/কৃষাণির নাম ও পিতা/স্বামীর নাম</th>
         <th>জাতীয় পরিচয়পত্র নম্বর</th>
         <th>গ্রাম/ব্লক</th>
         <th>মোবাইল নম্বর</th>
-        <th>মন্তব্য</th>
+        <th>উপজেলা কৃষি অফিসারের মন্তব্য</th>
+        <th>উপ-পরিচালকের মন্তব্য</th>
+        <th>প্রকল্প পরিচালকের মন্তব্য</th>
         </tr>
         </thead>
         <tbody>

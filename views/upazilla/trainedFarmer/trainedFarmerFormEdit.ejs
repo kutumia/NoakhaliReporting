@@ -1,0 +1,101 @@
+<%- include('../../includes/header')-%>
+        <div class="wrapper">
+          <%- include('../../includes/topbar')-%>
+            <div class="page-wrap">
+              <%- include('../../includes/sidebar')-%>
+              <div class="main-content">
+                <div class="container-fluid">
+                    <div class="row clearfix">
+                    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title"><h2>কৃষক প্রশিক্ষণ তথ্য ফর্ম</h2></div>
+                                <p><%
+                                if(success !=''){ %>
+                                <%= success %>
+                                    <% } %>
+                                </p>
+                                </div>  
+                            <div class="panel-body" >
+                                <form action="/upazilla/trainedFarmerFormEditPost/<%= records.id %>" id="FieldTrialForm" class="form-horizontal" method="post"  role="form">
+                                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                                        <p>Error:</p>
+                                        <span></span>
+                                    </div>
+
+                                        
+                                    <div class="form-group">
+                                        <label for="name" class="col-md-3 control-label">প্রশিক্ষণার্থীর নাম ও পিতা/স্বামীর নাম</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="name" placeholder="প্রশিক্ষণার্থীর নাম ও পিতা/স্বামীর নাম" value="<%=records.name%>">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="vname" class="col-md-3 control-label">গ্রাম/ব্লক</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="vname" placeholder="গ্রাম/ব্লক" value="<%=records.vname%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="mnum" class="col-md-3 control-label">মোবাইল নম্বর (যদি থাকে)</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="mnum" placeholder="মোবাইল নম্বর (যদি থাকে)" value="<%=records.mnum%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="nid" class="col-md-3 control-label">জাতীয় পরিচয়পত্র নম্বর</label>
+                                        <div class="col-md-9">
+                                        <input type="text" class="form-control" name="nid" placeholder="জাতীয় পরিচয়পত্র নম্বর " value="<%=records.nid%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="card" class="col-md-3 control-label">কৃষি উপকরণ কার্ডের নং</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="card" placeholder="কৃষি উপকরণ কার্ডের নং" value="<%=records.card%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="topic" class="col-md-3 control-label">প্রশিক্ষণের বিষয়</label>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control" name="topic" placeholder="প্র্রশিক্ষণের বিষয়" value="<%=records.topic%>">
+                                        </div>
+                                    </div>
+                                
+                                    <div class="form-group">
+                                        <label for="date" class="col-md-3 control-label">প্রশিক্ষণের তারিখ</label>
+                                        <div class="col-md-9">
+                                            <input type="date" class="form-control" name="date" placeholder="প্র্রশিক্ষণের তারিখ" value="<%=records.date%>">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-9">
+                                            <input type="hidden" class="form-control" name="user_id" placeholder="id" value="<%= user_id %>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <!-- Button -->                                        
+                                        <div class="col-md-offset-3 col-md-9">
+                                        <input type="submit" name="submit" value="submit" class="btn btn-primary">   
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                        
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('../../includes/footer')-%>
