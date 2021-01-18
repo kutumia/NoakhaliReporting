@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const finalTrial = sequelize.define("finalTrial", {
+    const finalTrial = sequelize.define("finaltrial", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,

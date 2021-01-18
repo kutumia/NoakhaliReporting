@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const fieldDay = sequelize.define("fieldDay", {
+    const fieldDay = sequelize.define("fieldday", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
