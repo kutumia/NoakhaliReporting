@@ -150,7 +150,7 @@ module.exports.trainedFarmer=async(req,res)=>{
 
 module.exports.trainedFarmerFilter=async(req,res)=>{
     await trainedFarmer.findAll({ 
-        where: {year: req.body.year,upazilla_id: req.body.upazilla}
+        where: {year: req.body.year,upazilla_id: req.body.upazilla,batch:req.body.batch}
     })
     .then(data => {
         res.render('pd/trainedFarmer/trainedFarmerTable', {records: data} ,function(err, html) {
@@ -370,7 +370,7 @@ module.exports.agriFair=async(req,res)=>{
 
 module.exports.agriFairFilter=async(req,res)=>{
     await agriFair.findAll({ 
-        where: {year: req.body.year,upazilla_id: req.body.upazilla}
+        where: {year: req.body.year,upazilla_id: req.body.upazilla,batch:req.body.batch}
     })
     .then(data => {
         res.render('pd/agriFair/agriFairTable', {records: data} ,function(err, html) {
@@ -593,7 +593,7 @@ module.exports.motivation=async(req,res)=>{
 
 module.exports.motivationFilter=async(req,res)=>{
     await motivation.findAll({ 
-        where: {year: req.body.year,upazilla_id: req.body.upazilla}
+        where: {year: req.body.year,upazilla_id: req.body.upazilla,batch:req.body.batch}
     })
     .then(data => {
         res.render('pd/motivation/motivationTable', {records: data} ,function(err, html) {
@@ -667,7 +667,7 @@ module.exports.fieldDay=async(req,res)=>{
 
 module.exports.fieldDayFilter=async(req,res)=>{
     await fieldDay.findAll({ 
-        where: {year: req.body.year,upazilla_id: req.body.upazilla}
+        where: {year: req.body.year,upazilla_id: req.body.upazilla,batch:req.body.batch}
     })
     .then(data => {
         res.render('pd/fieldDay/fieldDayTable', {records: data} ,function(err, html) {

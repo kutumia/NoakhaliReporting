@@ -32,9 +32,24 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        
-                                    <div class="col-md-3">
-                                        <label for="year">বছর বাছুন:</label>
+                                        <div class="col-md-2">
+                                            <label for="batch">ব্যাচ নং:</label>
+                                            <select id="batch" name="batch">
+                                                <option value="">বাছুন</option>
+                                                <option value="01">০১</option>
+                                                <option value="02">০২</option>
+                                                <option value="03">০৩</option>
+                                                <option value="04">০৪</option>
+                                                <option value="05">০৫</option>
+                                                <option value="06">০৬</option>
+                                                <option value="07">০৭</option>
+                                                <option value="08">০৮</option>
+                                                <option value="09">০৯</option>
+                                                <option value="10">১০</option>
+                                            </select>
+                                        </div>
+                                    <div class="col-md-2">
+                                        <label for="year">বছর :</label>
                                         <select id="year" name="year">
                                             <option value="2017">২০১৭-১৮</option>
                                             <option value="2018">২০১৮-১৯</option>
@@ -45,7 +60,7 @@
                                             <option value="2023">২০২৩-২৪</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <!-- Button -->                                        
                                         <div>
                                         <input type="submit" id="submit" name="submit" value="রিপোর্ট দেখুন" class="btn btn-primary">   
@@ -139,12 +154,12 @@
 
     $("#wrapper").load( "no url rn",function() {
         
-        var year = new Date().getFullYear();
-        var upazilla = $('#upazilla').val();
+        var year = $('#year').val();
+        var batch = $('#batch').val();        var upazilla = $('#upazilla').val();
         $.ajax({
             type: "POST",
             url: "/pd/fieldDayFilter",
-            data: {year: year,upazilla:upazilla},
+            data: {year: year,upazilla:upazilla,batch:batch},
             datatype: "json",
             beforeSend: function() {
                 // setting a timeout
@@ -165,11 +180,11 @@
 
     $('#submit').on("click",function () {
         var year = $('#year').val();
-        var upazilla = $('#upazilla').val();
+        var batch = $('#batch').val();        var upazilla = $('#upazilla').val();
         $.ajax({
             type: "POST",
             url: "/pd/fieldDayFilter",
-            data: {year: year,upazilla:upazilla},
+            data: {year: year,upazilla:upazilla,batch:batch},
             datatype: "json",
             beforeSend: function() {
                 // setting a timeout

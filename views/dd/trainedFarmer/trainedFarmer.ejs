@@ -14,7 +14,7 @@
                             <div class="card-body">
                                 <div class="row clearfix">
                                 <%if (upazillas.length >0){ %>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <label for="upazilla">উপজেলা বাছুন:</label>
                                                 <select id="upazilla" name="upazilla">
                                                     <% upazillas.forEach(function(row){ %>
@@ -23,7 +23,23 @@
                                                 </select>
                                         </div>
                                     <% } %>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
+                                        <label for="batch">ব্যাচ নং:</label>
+                                        <select id="batch" name="batch">
+                                            <option value="">ব্যাচ</option>
+                                            <option value="01">০১</option>
+                                            <option value="02">০২</option>
+                                            <option value="03">০৩</option>
+                                            <option value="04">০৪</option>
+                                            <option value="05">০৫</option>
+                                            <option value="06">০৬</option>
+                                            <option value="07">০৭</option>
+                                            <option value="08">০৮</option>
+                                            <option value="09">০৯</option>
+                                            <option value="10">১০</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
                                         <label for="year">বছর বাছুন:</label>
                                         <select id="year" name="year">
                                             <option value="2017">২০১৭-১৮</option>
@@ -35,7 +51,7 @@
                                             <option value="2023">২০২৩-২৪</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <!-- Button -->                                        
                                         <div>
                                         <input type="submit" id="submit" name="submit" value="রিপোর্ট দেখুন" class="btn btn-primary">   
@@ -96,12 +112,13 @@
 
     $("#wrapper").load( "no url rn",function() {
         
-        var year = new Date().getFullYear();
+        var year = $('#year').val();
         var upazilla = $('#upazilla').val();
+        var batch = $('#batch').val();
         $.ajax({
             type: "POST",
             url: "/dd/trainedFarmerFilter",
-            data: {year: year,upazilla:upazilla},
+            data: {year: year,upazilla:upazilla,batch:batch},
             datatype: "json",
             beforeSend: function() {
                 // setting a timeout
@@ -123,10 +140,11 @@
     $('#submit').on("click",function () {
         var year = $('#year').val();
         var upazilla = $('#upazilla').val();
+        var batch = $('#batch').val();
         $.ajax({
             type: "POST",
             url: "/dd/trainedFarmerFilter",
-            data: {year: year,upazilla:upazilla},
+            data: {year: year,upazilla:upazilla,batch:batch},
             datatype: "json",
             beforeSend: function() {
                 // setting a timeout
