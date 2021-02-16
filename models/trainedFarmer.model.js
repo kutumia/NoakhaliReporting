@@ -23,6 +23,9 @@ module.exports = (sequelize, Sequelize) => {
       date: {
         type: Sequelize.STRING
       },
+      finishDate: {
+        type: Sequelize.STRING
+      },
       card: {
         type: Sequelize.STRING
       },

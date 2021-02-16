@@ -184,6 +184,7 @@ module.exports.trainedFarmerFormPost=async(req,res)=>{
     var nid= req.body.nid;
     var topic= req.body.topic;
     var date= req.body.date;
+    var finishDate= req.body.finishDate;
     var card= req.body.card;
     var batch =req.body.batch;
     var year =req.body.year;
@@ -196,6 +197,7 @@ module.exports.trainedFarmerFormPost=async(req,res)=>{
         nid:nid,
         topic:topic,
         date:date,
+        finishDate:finishDate,
         card:card,
         batch:batch,
         year:year,
@@ -241,6 +243,7 @@ module.exports.trainedFarmerFormEditPost=async(req,res)=>{
     var nid= req.body.nid;
     var topic= req.body.topic;
     var date= req.body.date;
+    var finishDate= req.body.finishDate;
     var card= req.body.card;
     var year =req.body.year;
     var user_id =req.body.user_id;
@@ -252,6 +255,7 @@ module.exports.trainedFarmerFormEditPost=async(req,res)=>{
         nid:nid,
         topic:topic,
         date:date,
+        finishDate:finishDate,
         card:card,
         year:year
     },
